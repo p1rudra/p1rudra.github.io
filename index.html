@@ -5,20 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Pavan Rudra" />
-  <meta name="description" content="Portfolio website of Pavan Rudra — Senior MLOps Engineer skilled in DevOps, Cloud (Azure, AWS, GCP), Kubernetes, Terraform, and CI/CD." />
-  <meta name="keywords" content="Pavan Rudra, DevOps, MLOps, Azure, AWS, GCP, Terraform, Kubernetes, CI/CD, Cloud Engineer, Portfolio" />
+  <meta name="description" content="Pavan Rudra — Senior MLOps and DevOps Engineer skilled in Azure, AWS, GCP, Kubernetes, Terraform, CI/CD, and Cloud Automation." />
+  <meta name="keywords" content="Pavan Rudra, DevOps Engineer, MLOps Engineer, Cloud Engineer, Azure, AWS, GCP, Terraform, Kubernetes, CI/CD, Python, Ansible, Cloud Automation, Infrastructure as Code, SRE, Platform Engineer" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Pavan Rudra | Senior MLOps Engineer" />
-  <meta property="og:description" content="Portfolio of Pavan Rudra — Cloud, DevOps, and MLOps Engineer with expertise in Azure, AWS, Terraform, and CI/CD automation." />
+  <meta property="og:title" content="Pavan Rudra | Senior MLOps & DevOps Engineer" />
+  <meta property="og:description" content="Portfolio of Pavan Rudra — Cloud, DevOps, and MLOps Engineer with expertise in Azure, AWS, Terraform, and Kubernetes." />
   <meta property="og:image" content="pavan.jpg" />
   <meta property="og:url" content="https://p1rudra.github.io/" />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <title>Pavan Rudra | Senior MLOps Engineer</title>
+  <title>Pavan Rudra | Senior MLOps & DevOps Engineer</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -28,39 +25,27 @@
 
   <style>
     :root {
-      --bg: #f8f9fa;
+      --primary: #16a34a;
+      --primary-dark: #15803d;
       --text: #212529;
-      --primary: #0d6efd;
+      --bg: #f8f9fa;
       --card-bg: #ffffff;
-      --link: #0d6efd;
       --muted: #6c757d;
-    }
-
-    body.dark {
-      --bg: #0f1115;
-      --text: #f5f7fa;
-      --primary: #5ba8ff;
-      --card-bg: #1c1f26;
-      --link: #69b9ff;
-      --muted: #b0b8c1;
     }
 
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      transition: background-color 0.3s, color 0.3s;
       line-height: 1.6;
     }
 
-    /* Header */
     .profile-header {
       text-align: center;
       padding: 3rem 1rem 4rem;
-      background: linear-gradient(135deg, var(--primary), #6610f2);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
       border-radius: 0 0 2rem 2rem;
-      position: relative;
     }
 
     .profile-header img {
@@ -72,35 +57,16 @@
       object-fit: cover;
     }
 
-    .header-actions {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .theme-toggle, .resume-btn {
-      background: rgba(255,255,255,0.15);
-      border: none;
-      color: #fff;
-      padding: .5rem .9rem;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.2s ease-in-out;
-    }
-
-    .theme-toggle:hover, .resume-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-
     section {
       margin-top: 3rem;
     }
 
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
     h2 {
-      color: var(--primary);
+      color: var(--primary-dark);
       border-bottom: 2px solid var(--primary);
       display: inline-block;
       padding-bottom: .25rem;
@@ -110,16 +76,16 @@
     .card {
       background-color: var(--card-bg);
       border: none;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease-in-out;
     }
 
-    body.dark .card {
-      box-shadow: 0 0 12px rgba(90,150,255,0.15);
+    .card:hover {
+      transform: translateY(-4px);
     }
 
     a {
-      color: var(--link);
+      color: var(--primary-dark);
       text-decoration: none;
     }
 
@@ -139,11 +105,6 @@
 
 <body>
   <header class="profile-header">
-    <div class="header-actions">
-      <a class="resume-btn" href="Pavan_Resume_Devops_epam.pdf" download title="Download Resume">📄</a>
-      <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
-    </div>
-
     <img src="pavan.jpg" alt="Pavan Rudra Photo">
     <h1 class="fw-bold">Pavan Rudra</h1>
     <p class="lead mb-1">Senior MLOps Engineer | DevOps | Cloud | Automation</p>
@@ -156,76 +117,93 @@
 
   <main class="container">
 
-    <section>
-      <h2>Key Skills</h2>
+    <section id="summary">
+      <h2>Professional Summary</h2>
       <p>
-        Azure, AWS, GCP, Docker, Kubernetes, CI/CD, ArgoCD, Ansible, Terraform, Windows, Linux, Python, Bash, 
-        IaaS/PaaS, Virtualization, Git, Managed Services, VMWare, Powershell, Azure Data Factory, Web3, Azure Databricks
+        Results-driven <strong>Senior MLOps and DevOps Engineer</strong> with 7+ years of experience in cloud-native technologies, automation, and CI/CD pipelines.
+        Adept in <strong>Azure</strong>, <strong>AWS</strong>, and <strong>GCP</strong> environments, with expertise in <strong>Kubernetes</strong>, <strong>Terraform</strong>, and <strong>Python</strong>.
+        Proven success in implementing scalable, secure, and resilient cloud infrastructures following DevSecOps best practices.
       </p>
     </section>
 
-    <section>
-      <h2>Work Experience</h2>
+    <section id="skills">
+      <h2>Core Skills</h2>
+      <ul>
+        <li><strong>Cloud Platforms:</strong> Microsoft Azure, AWS, GCP</li>
+        <li><strong>Containerization & Orchestration:</strong> Docker, Kubernetes, AKS, EKS</li>
+        <li><strong>Infrastructure as Code:</strong> Terraform, Ansible</li>
+        <li><strong>CI/CD Pipelines:</strong> GitHub Actions, Azure DevOps, Jenkins, ArgoCD</li>
+        <li><strong>Monitoring & Observability:</strong> Prometheus, Grafana, Azure Monitor</li>
+        <li><strong>Programming & Scripting:</strong> Python, Bash, PowerShell</li>
+        <li><strong>Operating Systems:</strong> Linux (Ubuntu, CentOS), Windows Server</li>
+        <li><strong>Other Tools:</strong> Git, Helm, Docker Compose, ITIL, Automation</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Professional Experience</h2>
 
       <div class="card mb-3 p-3">
         <div class="card-body">
-          <h5 class="fw-bold">EPAM Systems — Senior MLOps Engineer <span class="text-muted">(Apr 2024 – Present)</span></h5>
+          <h3 class="fw-bold">EPAM Systems — Senior MLOps Engineer <span class="text-muted">(Apr 2024 – Present)</span></h3>
           <p><strong>Project:</strong> AstraZeneca</p>
-          <p><strong>Tools & Technologies:</strong> Azure DevOps, Prometheus, Grafana, AKS, Terraform, GitHub Actions, AWS</p>
           <ul>
-            <li>Built secure CI/CD pipelines integrating compliance checks.</li>
-            <li>Managed Kubernetes clusters ensuring HA and scalability.</li>
-            <li>Automated infrastructure with Terraform across AWS.</li>
-            <li>Provided DevOps mentorship and troubleshooting expertise.</li>
+            <li>Designed and implemented CI/CD pipelines using GitHub Actions and Azure DevOps with security gates.</li>
+            <li>Managed and scaled Kubernetes clusters ensuring reliability and high availability.</li>
+            <li>Automated multi-cloud infrastructure provisioning using Terraform across AWS and Azure.</li>
+            <li>Mentored DevOps engineers, improving automation efficiency by 30%.</li>
           </ul>
         </div>
       </div>
 
       <div class="card mb-3 p-3">
         <div class="card-body">
-          <h5 class="fw-bold">Mphasis — Senior DevOps Engineer <span class="text-muted">(Jul 2023 – Apr 2024)</span></h5>
+          <h3 class="fw-bold">Mphasis — Senior DevOps Engineer <span class="text-muted">(Jul 2023 – Apr 2024)</span></h3>
+          <p><strong>Project:</strong> Hewlett Packard</p>
           <ul>
-            <li>Integrated CI/CD workflows with security gates (Trivy, SAST/DAST).</li>
-            <li>Managed EKS clusters and automated scaling for microservices.</li>
-            <li>Reduced manual errors by 40% using Terraform automation.</li>
+            <li>Built and optimized AWS EKS clusters with RBAC and workload identity management.</li>
+            <li>Integrated SAST/DAST security scanning into CI/CD pipelines.</li>
+            <li>Automated deployments with Helm, improving delivery cycle time by 40%.</li>
+            <li>Managed microservices monitoring using Prometheus and Grafana for 99.99% uptime.</li>
           </ul>
         </div>
       </div>
 
       <div class="card mb-3 p-3">
         <div class="card-body">
-          <h5 class="fw-bold">Accenture Solutions Pvt Ltd — DevOps Engineer <span class="text-muted">(Aug 2021 – Jul 2023)</span></h5>
+          <h3 class="fw-bold">Accenture Solutions Pvt Ltd — DevOps Engineer <span class="text-muted">(Aug 2021 – Jul 2023)</span></h3>
           <ul>
-            <li>Optimized Azure resources for cost, security, and performance.</li>
-            <li>Developed automation scripts using PowerShell, Python, and Ansible.</li>
-            <li>Implemented monitoring reducing MTTR by 30%.</li>
+            <li>Optimized Azure cloud resources (App Services, Networking, Databases) for performance and cost.</li>
+            <li>Automated infrastructure patching and configuration with Ansible and Python scripts.</li>
+            <li>Implemented observability with Azure Monitor and Grafana, reducing MTTR by 30%.</li>
           </ul>
         </div>
       </div>
 
       <div class="card mb-3 p-3">
         <div class="card-body">
-          <h5 class="fw-bold">Infogain Solutions Pvt Ltd — Cloud Engineer <span class="text-muted">(Apr 2019 – Jul 2021)</span></h5>
+          <h3 class="fw-bold">Infogain Solutions Pvt Ltd — Cloud Engineer <span class="text-muted">(Apr 2019 – Jul 2021)</span></h3>
           <ul>
-            <li>Maintained Linux environments with high availability focus.</li>
-            <li>Configured Azure RBAC, IAM, and private endpoints for secure infra.</li>
-            <li>Participated in SEV1/2 incident resolution and RCA analysis.</li>
+            <li>Maintained Azure and Linux production environments with 24/7 support coverage.</li>
+            <li>Implemented RBAC, IAM policies, and secure network architectures (VNETs, VPNs).</li>
+            <li>Performed RCA analysis for SEV1/2 incidents, enhancing system stability.</li>
           </ul>
         </div>
       </div>
 
       <div class="card mb-3 p-3">
         <div class="card-body">
-          <h5 class="fw-bold">Webbions Technologies — Software Engineer <span class="text-muted">(May 2017 – Mar 2019)</span></h5>
+          <h3 class="fw-bold">Webbions Technologies — Software Engineer <span class="text-muted">(May 2017 – Mar 2019)</span></h3>
           <ul>
-            <li>Developed automation using Python, Bash, and Ansible.</li>
-            <li>Improved deployment reliability and reduced downtime.</li>
+            <li>Developed Python and Bash automation scripts for server management.</li>
+            <li>Created Ansible playbooks to manage deployments and configurations at scale.</li>
+            <li>Improved system reliability and uptime through proactive incident resolution.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="education">
       <h2>Education</h2>
       <p><strong>B.E. in Electronics and Communication Engineering</strong><br>
         Vishwakarma Government Engineering College, Ahmedabad (2013 – 2017)<br>
@@ -233,48 +211,31 @@
       </p>
     </section>
 
-    <section>
+    <section id="certifications">
       <h2>Certifications</h2>
       <ul>
-        <li><a href="https://www.credly.com/badges/f9bcbdd8-5802-43e3-9a04-ec9c2cd8d59c/linked_in_profile" target="_blank">AWS Certified DevOps Engineer – Professional</a></li>
-        <li><a href="https://www.credly.com/badges/ae0da6a0-9623-4e36-bc4e-f69672d9cbfd/linked_in_profile" target="_blank">AZ-400: Microsoft DevOps Solutions</a></li>
-        <li><a href="https://www.credly.com/badges/d7993fef-521b-4dea-b09f-3d07aaa79fb3/linked_in_profile" target="_blank">AZ-104: Azure Administrator</a></li>
-        <li><a href="https://www.youracclaim.com/badges/d456df02-f756-437d-a99c-4124d2b4a2ed/linked_in_profile" target="_blank">AZ-900: Azure Fundamentals</a></li>
-        <li><a href="https://www.credly.com/badges/abe2b9bf-782f-450a-8ad8-d387335447d9/public_url" target="_blank">Certified Ethical Hacker (CEH) v11</a></li>
+        <li>AWS Certified DevOps Engineer – Professional</li>
+        <li>Microsoft Certified: AZ-400 DevOps Engineer Expert</li>
+        <li>Microsoft Certified: AZ-104 Azure Administrator</li>
+        <li>Microsoft Certified: AZ-900 Azure Fundamentals</li>
+        <li>Certified Ethical Hacker (CEH) v11</li>
       </ul>
     </section>
 
-    <section>
+    <section id="soft-skills">
       <h2>Mindset & Soft Skills</h2>
       <ul>
-        <li>Strong analytical and troubleshooting skills in distributed systems.</li>
-        <li>Self-driven and curious about performance, resilience, and security.</li>
-        <li>Collaborative communicator across engineering and security teams.</li>
+        <li>Excellent analytical and troubleshooting abilities in distributed systems.</li>
+        <li>Autonomous problem-solver passionate about cloud performance and security.</li>
+        <li>Collaborative communicator and mentor across engineering teams.</li>
       </ul>
     </section>
   </main>
 
   <footer>
-    © 2025 Pavan Rudra — Built with ❤️ using Bootstrap 5 | Hosted on <a href="https://github.com/p1rudra" target="_blank">GitHub Pages</a>
+    © 2025 Pavan Rudra — Built with ❤️ using Bootstrap 5 | <a href="https://github.com/p1rudra" target="_blank">GitHub</a>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const toggleBtn = document.getElementById('themeToggle');
-    const body = document.body;
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme === 'dark') {
-      body.classList.add('dark');
-      toggleBtn.textContent = '☀️';
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      const isDark = body.classList.contains('dark');
-      toggleBtn.textContent = isDark ? '☀️' : '🌙';
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-  </script>
 </body>
 </html>
