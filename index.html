@@ -1,288 +1,207 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>My Profile</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pavan Rudra | Profile</title>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="profile.css" crossorigin="anonymous">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    .profile-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      margin-top: 2rem;
+      text-align: center;
+      padding: 2rem;
+    }
+    .profile-card img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0d6efd;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #0d6efd;
+      border-bottom: 2px solid #0d6efd;
+      display: inline-block;
+      padding-bottom: .25rem;
+    }
+    table th {
+      background-color: #e9ecef;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
-	<div class="col-lg-12 col-md-12 col-sm-6">
-		<div class="card hovercard">
-			
-			<div class="useravatar">
-				<img alt="Photo comming soon" src="pavan.jpg">
-			</div>
-			<div class="card-info" style="margin-top: 130px;">
-				<span class="card-title">Pavan Rudra</span>
-			</div>
-			<div class="card-info">
-				<span class="card-title">23<sup>rd</sup> June 1996
-				</span>
-			</div>
-		</div>
-		<h2>ACADEMIC QUALIFICATION</h2>
-		<table class="table table-bordered">
-			<tbody>
-				<tr>
-					<th>#</th>
-					<th>DEGREE</th>
-					<th>SCHOOL/COLLEGE</th>
-					<th>BOARD/UNIVERSITY</th>
-					<th>YEAR OF PASSING</th>
-					<th>MARKS (%)</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>PG-DITISS</td>
-					<td>CDAC ACTS</td>
-					<td>University of Pune</td>
-					<td>2019</td>
-					<td>75.38</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>B.E(ECE)</td>
-					<td>Vishwakarma Government Engineering College</td>
-					<td>GTU</td>
-					<td>2017</td>
-					<td>7.62 CGPA</td>
-				</tr>
-			</tbody>
-		</table>
-		<h2>TECHNICAL SKILLS</h2>
+  <div class="container">
+    <header class="profile-card">
+      <img src="pavan.jpg" alt="Pavan Rudra Photo">
+      <h1 class="fw-bold">Pavan Rudra</h1>
+      <p>Born: 23<sup>rd</sup> June 1996</p>
+      <p class="text-muted mb-0">Cloud Engineer</p>
+    </header>
 
-		<table class="table table-bordered">
-			<tbody>
-				<tr>
-					<th>#</th>
-					<th></th>
-					<th>skills</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Programming Languages</td>
-					<td>Python</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Databases</td>
-					<td>PostgreSQL, MYSQL,MongoDB</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Technologies</td>
-					<td>Microsoft Azure, AWS, Puppet, Ansible </td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>Operating System</td>
-					<td>Linux(Ubuntu, CentOS), Windows</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>Version Control</td>
-					<td>Git</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>Basic Knowledge</td>
-					<td>Nginx, apache, AWS route53, AWS RDS, Lambda function, Beanstock</td>
-				</tr>
-			</tbody>
-		</table>
-		<h2>Professional Summary</h2>
-		<h5>
-			<b id="experience"></b> experience as Cloud Engineer.
-		</h5>
-		<label>Key Activity</label>
-		<ul>
-			<li>
-			Worked on Microsoft Azure (Public) Cloud to provide IaaS support to client. Create Virtual Machines through Azure Portal and powershell.
-			</li>
-			<li>
-			Configuring Backup Configuration, Azure Update Management and Log Analytics Workspace to patch VMs
-			</li>
-			<li>
-			Capture an image of a Virtual Machine. Attaching a Disk to a Virtual Machine. Manage and create Virtual Network in Azure Portal.
-			</li>
-			<li>
-			Re-sizing Virtual Machine and setting right scaling as per usage.
-			</li>
-			<li>
-			Conversion of Un-managed Disk to Managed Disk and knowledge of Azure Security Center and Sentinel.
-			</li>
-			<li>
-			Troubleshooting if any incident reported and coordinating with vendor for high severity issues and getting it resolved in duly manner.
-			</li>
-		</ul>
-		
-		<h2>Professional Experience</h2>
-		<table class="table table-bordered">
-			<tbody>
-				<tr>
-					<th>#</th>
-					<th>Company</th>
-					<th>Designation</th>
-					<th>Duration</th>
-				</tr>
-				<!-- <tr>
-					<td>1</td>
-					<td>Harman Connected Services Corporation India Pvt. Ltd , Pune</td>
-					<td>Software Engineer</td>
-					<td> 1<sup>st</sup> July 2016 to till now</td>
-				</tr> -->
-				<!-- <tr>
-					<td>2</td>
-					<td>Plancess EduSolutions Pvt Ltd, Mumbai</td>
-					<td>Python Developer</td>
-					<td>December 2015 to June 2016</td>
-				</tr> -->
-				<tr>
-					<td>1</td>
-					<td>Infogain India Pvt. Ltd</td>
-					<td>Technical Support Engineer</td>
-					<td>1st April 2019 - 30th June 2021 </td>
-				</tr>
-			</tbody>
-		</table>
-		<h2>Projects</h2>
-		<div class="media">
-			<div class="media-left"></div>
-			<div class="media-body">
-				<h4 class="media-heading">
-					<span class="col-lg-12 col-md-12 col-sm-12">
-						<h4>Nov 2018 to Feb 2019</h4>
-					</span>
-					<span class="col-lg-4 col-md-4 col-sm-12">
-						<!-- <h3>http://beta.wikireviews.com</h3> -->
-					</span>
-					<span class="col-lg-4 col-md-4 col-sm-12">
-						<h3>OpenStack</h3>
-					</span>
-				</h4>
-				<div class="project-description col-lg-12 col-md-12 col-sm-12">
-					<label>Role</label>
-					<header>Develop, Integrate, Deployment</header>
-					<label>Technology</label>
-					<header>Python, IAAS, Private Cloud, Github</header>
-					<label>Description</label>
-					<header>At the time of Post-graduation at CDAC we have configured four components of OpenStack Networking (Neutron), Compute (Nova), Image Service (Glance) and Dashboard(Horizon) which is IAAS of Private Cloud.
-						 </header>
-					<!-- <header>WikiReviews is also a social site where users are encouraged to recommend things they like so that
-						this can be easily shared with their friends. </header>
-					<header>WikiReviews also allows the community to post their own personal projects that they want the
-						community to review. </header> -->
-				</div>
-			</div>
-		</div>
-		<!-- <div class="media">
-			<div class="media-left"></div>
-			<div class="media-body">
-				<h4 class="media-heading">
-					<span class="col-lg-12 col-md-12 col-sm-12">
-						<h3>2. NCAIED(National Center for American Indian Enterprise Development) Native Edge</h3>
-					</span>
-					<span class="col-lg-4 col-md-4 col-sm-12">
-						<h3>http://nativeedge.com</h3>
-					</span>
-					<span class="col-lg-4 col-md-4 col-sm-12">
-						<h3>January 2015 to July 2015</h3>
-					</span>
-				</h4>
-				<div class="project-description col-lg-12 col-md-12 col-sm-12">
-					<label>Role</label>
-					<header>Develop, Integrate, Deployment</header>
-					<label>Technology</label>
-					<header>Python, Django, MySql, Angular Js, Html, CSS, ElasticSearch, Github</header>
-					<label>Description</label>
-					<header> The Native Edge is an online business training, networking, employment and development ecosystem
-						built to give Indian Country the “Edge” in all aspects of business.</header>
-				</div>
-			</div>
-		</div>
-		<div class="media">
-			<div class="media-left"></div>
-			<div class="media-body">
-				<h4 class="media-heading">
-					<span class="col-lg-12 col-md-12 col-sm-12">
-						<h3>3. Supplier IQ</h3>
-					</span>
-					<span class="col-lg-4 col-md-4 col-sm-12">
-						<h3>https://supplieriq.us</h3>
-					</span>
-					<span class="col-lg-4 col-md-4 col-sm-12">
-						<h3>August 2014 to December 2014</h3>
-					</span>
-				</h4>
-				<div class="project-description col-lg-12 col-md-12 col-sm-12">
-					<label>Role</label>
-					<header>Develop, Integrate, Deployment</header>
-					<label>Technology</label>
-					<header>Python, Django, MySql, Angular Js, Html, CSS, ElasticSearch, Github</header>
-					<label>Description</label>
-					<header> It is an intelligent business matching platform for buyer and supplier implemented with
-						elasticsearch along with features like messaging , Dynammic formBuilling etc. </header>
-				</div>
-			</div>
-		</div> -->
-	<h2>PERSONAL DETAILS</h2>
-		<table class="table table-bordered">
-			<tbody>
-				<tr>
-					<td>Date of Birth</td>
-					<td>23<sup>rd</sup> June 1996</td>
-				</tr>
-				<tr>
-					<td>Sex</td>
-					<td>Male</td>
-				</tr>
-				<tr>
-					<td>Marital Status</td>
-					<td>Single</td>
-				</tr>
-				<tr>
-					<td>Nationality</td>
-					<td>Indian</td>
-				</tr>
-				<tr>
-					<td>Linguistic skills</td>
-					<td>English, Hindi, Telugu, Gujrati</td>
-				</tr>
-				<tr>
-					<td>Present Address</td>
-					<td>Warje-malwadi, Pune- 411058</td>
-				</tr>
-				<tr>
-					<td>Permanent Address</td>
-					<td>Bapunagar, Ahmedabad- 380024</td>
-				</tr>
-				<tr>
-					<td>Hobbies</td>
-					<td>Investment in Stocks, Travelling</td>
-				</tr>
+    <!-- Academic Qualification -->
+    <section>
+      <h2>Academic Qualification</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Degree</th>
+              <th>School/College</th>
+              <th>Board/University</th>
+              <th>Year</th>
+              <th>Marks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>PG-DITISS</td>
+              <td>CDAC ACTS</td>
+              <td>University of Pune</td>
+              <td>2019</td>
+              <td>75.38%</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>B.E (ECE)</td>
+              <td>Vishwakarma Government Engineering College</td>
+              <td>GTU</td>
+              <td>2017</td>
+              <td>7.62 CGPA</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-			</tbody>
-		</table>
- </div>
- </div>
-<!--	<h2>DECLARATION</h2>&ndash;&gt;-->
-<!--	I hereby declare that the above written particulars are true to the best of my knowledge and belief.-->
+    <!-- Technical Skills -->
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Category</th>
+              <th>Skills</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Programming Languages</td><td>Python</td></tr>
+            <tr><td>2</td><td>Databases</td><td>PostgreSQL, MySQL, MongoDB</td></tr>
+            <tr><td>3</td><td>Technologies</td><td>Microsoft Azure, AWS, Puppet, Ansible</td></tr>
+            <tr><td>4</td><td>Operating Systems</td><td>Linux (Ubuntu, CentOS), Windows</td></tr>
+            <tr><td>5</td><td>Version Control</td><td>Git</td></tr>
+            <tr><td>6</td><td>Basic Knowledge</td><td>Nginx, Apache, AWS Route53, AWS RDS, Lambda, Beanstalk</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-<!--												Pavan Rudra	                                                                          -->
+    <!-- Professional Summary -->
+    <section>
+      <h2>Professional Summary</h2>
+      <p><strong>2+ years</strong> experience as a Cloud Engineer.</p>
+      <label>Key Activities:</label>
+      <ul>
+        <li>Worked on Microsoft Azure (Public Cloud) to provide IaaS support.</li>
+        <li>Configured Backup, Update Management, and Log Analytics for VM patching.</li>
+        <li>Captured VM images, managed disks, and virtual networks in Azure.</li>
+        <li>Resized VMs and implemented right scaling strategies.</li>
+        <li>Converted unmanaged to managed disks and used Azure Security Center & Sentinel.</li>
+        <li>Troubleshot incidents, coordinated with vendors for critical issue resolution.</li>
+      </ul>
+    </section>
 
+    <!-- Professional Experience -->
+    <section>
+      <h2>Professional Experience</h2>
+      <table class="table table-bordered align-middle">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Company</th>
+            <th>Designation</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Infogain India Pvt. Ltd</td>
+            <td>Technical Support Engineer</td>
+            <td>Apr 2019 – Jun 2021</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2>Projects</h2>
+      <div class="card shadow-sm border-0 mb-4">
+        <div class="card-body">
+          <h5 class="text-primary mb-1">OpenStack</h5>
+          <p class="text-muted">Nov 2018 – Feb 2019</p>
+          <p><strong>Role:</strong> Develop, Integrate, Deployment</p>
+          <p><strong>Technology:</strong> Python, IaaS, Private Cloud, GitHub</p>
+          <p><strong>Description:</strong> Configured OpenStack components (Neutron, Nova, Glance, Horizon) as part of CDAC Post-graduation to implement IaaS in a Private Cloud environment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Details -->
+    <section>
+      <h2>Personal Details</h2>
+      <table class="table table-bordered align-middle">
+        <tbody>
+          <tr><td>Date of Birth</td><td>23<sup>rd</sup> June 1996</td></tr>
+          <tr><td>Sex</td><td>Male</td></tr>
+          <tr><td>Marital Status</td><td>Single</td></tr>
+          <tr><td>Nationality</td><td>Indian</td></tr>
+          <tr><td>Languages</td><td>English, Hindi, Telugu, Gujarati</td></tr>
+          <tr><td>Present Address</td><td>Warje-Malwadi, Pune – 411058</td></tr>
+          <tr><td>Permanent Address</td><td>Bapunagar, Ahmedabad – 380024</td></tr>
+          <tr><td>Hobbies</td><td>Investing in Stocks, Travelling</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p>© 2025 Pavan Rudra — All Rights Reserved</p>
+    </footer>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"
-	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src='profile.js'></script>
-
 </html>
