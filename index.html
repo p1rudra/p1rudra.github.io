@@ -18,13 +18,16 @@
       --primary: #0d6efd;
       --card-bg: #ffffff;
       --link: #0d6efd;
+      --muted: #6c757d;
     }
+
     body.dark {
       --bg: #121212;
-      --text: #e4e4e4;
+      --text: #e9ecef;
       --primary: #66b2ff;
       --card-bg: #1e1e1e;
       --link: #66b2ff;
+      --muted: #adb5bd;
     }
 
     body {
@@ -33,36 +36,54 @@
       color: var(--text);
       transition: background-color 0.3s, color 0.3s;
     }
+
+    /* Header */
     .profile-header {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 3rem 1rem 4rem;
       background: linear-gradient(135deg, var(--primary), #6610f2);
       color: white;
       border-radius: 0 0 2rem 2rem;
       position: relative;
     }
+
     .profile-header img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
       border: 4px solid white;
       margin-bottom: 1rem;
+      object-fit: cover;
     }
-    .theme-toggle {
+
+    .header-actions {
       position: absolute;
       top: 1rem;
       right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .theme-toggle, .resume-btn {
       background: rgba(255,255,255,0.15);
       border: none;
       color: #fff;
-      padding: .5rem .8rem;
+      padding: .5rem .9rem;
       border-radius: 50px;
       cursor: pointer;
       font-size: 1rem;
+      transition: background 0.2s ease-in-out;
     }
+
+    .theme-toggle:hover, .resume-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* Sections */
     section {
       margin-top: 3rem;
     }
+
     h2 {
       color: var(--primary);
       border-bottom: 2px solid var(--primary);
@@ -70,39 +91,47 @@
       padding-bottom: .25rem;
       margin-bottom: 1rem;
     }
+
     .card {
       background-color: var(--card-bg);
       border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       transition: background-color 0.3s, color 0.3s;
     }
+
     a {
       color: var(--link);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     footer {
       text-align: center;
       margin-top: 3rem;
       padding: 1rem;
       font-size: 0.9rem;
-      color: #6c757d;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
   <header class="profile-header">
-    <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+    <div class="header-actions">
+      <a class="resume-btn" href="Pavan_Resume_Devops_epam.pdf" download title="Download Resume">📄</a>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+    </div>
+
     <img src="pavan.jpg" alt="Pavan Rudra Photo">
     <h1 class="fw-bold">Pavan Rudra</h1>
     <p class="lead mb-1">Senior MLOps Engineer | DevOps | Cloud | Automation</p>
     <p>
-      📧 <a href="mailto:rudra23pavan@gmail.com" class="text-white">rudra23pavan@gmail.com</a> |
+      📧 <a href="mailto:rudra23pavan@gmail.com" class="text-white text-decoration-none">rudra23pavan@gmail.com</a> |
       📞 +91 7818888981 |
-      🌐 <a href="https://github.com/pvnrdr" class="text-white">GitHub</a>
+      🌐 <a href="https://github.com/p1rudra" class="text-white text-decoration-none">GitHub</a>
     </p>
   </header>
 
@@ -137,7 +166,7 @@
         <div class="card-body">
           <h5 class="fw-bold">Mphasis — Senior DevOps Engineer <span class="text-muted">(Jul 2023 – Apr 2024)</span></h5>
           <ul>
-            <li>Integrated DevOps practices and CI/CD pipelines with security gates (Trivy, SAST/DAST).</li>
+            <li>Integrated CI/CD workflows with security gates (Trivy, SAST/DAST).</li>
             <li>Managed EKS clusters and automated scaling for microservices.</li>
             <li>Reduced manual errors by 40% using Terraform automation.</li>
           </ul>
@@ -148,9 +177,9 @@
         <div class="card-body">
           <h5 class="fw-bold">Accenture Solutions Pvt Ltd — DevOps Engineer <span class="text-muted">(Aug 2021 – Jul 2023)</span></h5>
           <ul>
-            <li>Optimized Azure cloud resources for cost and performance.</li>
+            <li>Optimized Azure resources for cost, security, and performance.</li>
             <li>Developed automation scripts using PowerShell, Python, and Ansible.</li>
-            <li>Implemented monitoring with Prometheus, Grafana, and Azure Monitor reducing MTTR by 30%.</li>
+            <li>Implemented monitoring reducing MTTR by 30%.</li>
           </ul>
         </div>
       </div>
