@@ -7,8 +7,8 @@
   <meta name="author" content="Pavan Rudra" />
   <meta name="description" content="Portfolio website of Pavan Rudra — Senior MLOps Engineer skilled in DevOps, Cloud (Azure, AWS, GCP), Kubernetes, Terraform, and CI/CD." />
   <meta name="keywords" content="Pavan Rudra, DevOps, MLOps, Azure, AWS, GCP, Terraform, Kubernetes, CI/CD, Cloud Engineer, Portfolio" />
-  
-  <!-- Open Graph / Social Preview -->
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Pavan Rudra | Senior MLOps Engineer" />
   <meta property="og:description" content="Portfolio of Pavan Rudra — Cloud, DevOps, and MLOps Engineer with expertise in Azure, AWS, Terraform, and CI/CD automation." />
   <meta property="og:image" content="pavan.jpg" />
@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="pavan.jpg" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>Pavan Rudra | Senior MLOps Engineer</title>
 
@@ -37,12 +37,12 @@
     }
 
     body.dark {
-      --bg: #121212;
-      --text: #e9ecef;
-      --primary: #66b2ff;
-      --card-bg: #1e1e1e;
-      --link: #66b2ff;
-      --muted: #adb5bd;
+      --bg: #0f1115;
+      --text: #f5f7fa;
+      --primary: #5ba8ff;
+      --card-bg: #1c1f26;
+      --link: #69b9ff;
+      --muted: #b0b8c1;
     }
 
     body {
@@ -50,8 +50,10 @@
       background-color: var(--bg);
       color: var(--text);
       transition: background-color 0.3s, color 0.3s;
+      line-height: 1.6;
     }
 
+    /* Header */
     .profile-header {
       text-align: center;
       padding: 3rem 1rem 4rem;
@@ -108,8 +110,12 @@
     .card {
       background-color: var(--card-bg);
       border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: background-color 0.3s, color 0.3s;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+
+    body.dark .card {
+      box-shadow: 0 0 12px rgba(90,150,255,0.15);
     }
 
     a {
@@ -161,7 +167,7 @@
     <section>
       <h2>Work Experience</h2>
 
-      <div class="card mb-3">
+      <div class="card mb-3 p-3">
         <div class="card-body">
           <h5 class="fw-bold">EPAM Systems — Senior MLOps Engineer <span class="text-muted">(Apr 2024 – Present)</span></h5>
           <p><strong>Project:</strong> AstraZeneca</p>
@@ -175,7 +181,7 @@
         </div>
       </div>
 
-      <div class="card mb-3">
+      <div class="card mb-3 p-3">
         <div class="card-body">
           <h5 class="fw-bold">Mphasis — Senior DevOps Engineer <span class="text-muted">(Jul 2023 – Apr 2024)</span></h5>
           <ul>
@@ -186,7 +192,7 @@
         </div>
       </div>
 
-      <div class="card mb-3">
+      <div class="card mb-3 p-3">
         <div class="card-body">
           <h5 class="fw-bold">Accenture Solutions Pvt Ltd — DevOps Engineer <span class="text-muted">(Aug 2021 – Jul 2023)</span></h5>
           <ul>
@@ -197,7 +203,7 @@
         </div>
       </div>
 
-      <div class="card mb-3">
+      <div class="card mb-3 p-3">
         <div class="card-body">
           <h5 class="fw-bold">Infogain Solutions Pvt Ltd — Cloud Engineer <span class="text-muted">(Apr 2019 – Jul 2021)</span></h5>
           <ul>
@@ -208,7 +214,7 @@
         </div>
       </div>
 
-      <div class="card mb-3">
+      <div class="card mb-3 p-3">
         <div class="card-body">
           <h5 class="fw-bold">Webbions Technologies — Software Engineer <span class="text-muted">(May 2017 – Mar 2019)</span></h5>
           <ul>
