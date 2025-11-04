@@ -1,241 +1,482 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <!-- Basic Meta -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pavan Rudra — Senior MLOps & DevOps Engineer</title>
+
+  <!-- Primary meta -->
+  <meta name="description" content="Pavan Rudra — Senior MLOps & DevOps Engineer. Cloud-native, CI/CD, Kubernetes, Terraform, Azure, AWS, GCP. Open to opportunities." />
   <meta name="author" content="Pavan Rudra" />
-  <meta name="description" content="Pavan Rudra — Senior MLOps and DevOps Engineer skilled in Azure, AWS, GCP, Kubernetes, Terraform, CI/CD, and Cloud Automation." />
-  <meta name="keywords" content="Pavan Rudra, DevOps Engineer, MLOps Engineer, Cloud Engineer, Azure, AWS, GCP, Terraform, Kubernetes, CI/CD, Python, Ansible, Cloud Automation, Infrastructure as Code, SRE, Platform Engineer" />
+  <meta name="keywords" content="MLOps, DevOps, Cloud, Kubernetes, Terraform, Azure, AWS, GCP, CI/CD, Python, Ansible" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Pavan Rudra | Senior MLOps & DevOps Engineer" />
-  <meta property="og:description" content="Portfolio of Pavan Rudra — Cloud, DevOps, and MLOps Engineer with expertise in Azure, AWS, Terraform, and Kubernetes." />
+  <meta property="og:title" content="Pavan Rudra — Senior MLOps & DevOps Engineer" />
+  <meta property="og:description" content="Cloud-native engineer skilled in Azure, AWS, GCP, Kubernetes, Terraform, CI/CD and automation." />
   <meta property="og:image" content="pavan.jpg" />
-  <meta property="og:url" content="https://p1rudra.github.io/" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://p1rudra.github.io/" />
 
-  <title>Pavan Rudra | Senior MLOps & DevOps Engineer</title>
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pavan Rudra — Senior MLOps & DevOps Engineer" />
+  <meta name="twitter:description" content="Cloud-native engineer skilled in Azure, AWS, GCP, Kubernetes, Terraform, CI/CD and automation." />
+  <meta name="twitter:image" content="pavan.jpg" />
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- JSON-LD structured data for personal profile -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pavan Rudra",
+    "email": "rudra23pavan@gmail.com",
+    "telephone": "+91 7818888981",
+    "url": "https://p1rudra.github.io/",
+    "sameAs": [
+      "https://github.com/p1rudra",
+      "https://www.linkedin.com/in/p1rudra"
+    ],
+    "jobTitle": "Senior MLOps & DevOps Engineer",
+    "knowsAbout": ["Azure","AWS","GCP","Kubernetes","Terraform","CI/CD","Python","Ansible"]
+  }
+  </script>
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Tailwind Play CDN (quick prototyping) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config for custom colors + dark mode class
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#16a34a',
+              dark: '#15803d'
+            },
+            brandbg: '#0f172a'
+          },
+          boxShadow: {
+            soft: '0 6px 24px rgba(16,24,40,0.08)'
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
-    :root {
-      --primary: #16a34a;
-      --primary-dark: #15803d;
-      --text: #212529;
-      --bg: #f8f9fa;
-      --card-bg: #ffffff;
-      --muted: #6c757d;
+    /* Micro-interaction focus style */
+    .focus-ring:focus {
+      outline: 3px solid rgba(21,128,61,0.18);
+      outline-offset: 2px;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    /* Reveal animation states (used by JS) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .6s ease, transform .6s ease;
+      will-change: opacity, transform;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .profile-header {
-      text-align: center;
-      padding: 3rem 1rem 4rem;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      border-radius: 0 0 2rem 2rem;
+    /* small floating accent */
+    .accent-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      box-shadow: 0 8px 18px rgba(2,6,23,0.08);
+      transform-origin: center;
+      transition: transform .35s ease;
     }
 
-    .profile-header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid white;
-      margin-bottom: 1rem;
-      object-fit: cover;
-    }
-
-    section {
-      margin-top: 3rem;
-    }
-
-    h1, h2, h3 {
-      font-weight: 600;
-    }
-
-    h2 {
-      color: var(--primary-dark);
-      border-bottom: 2px solid var(--primary);
-      display: inline-block;
-      padding-bottom: .25rem;
-      margin-bottom: 1rem;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      border: none;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    a {
-      color: var(--primary-dark);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: var(--muted);
+    /* a11y: prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { transition: none; transform: none; opacity: 1; }
+      .animated-bounce { animation: none; }
     }
   </style>
 </head>
 
-<body>
-  <header class="profile-header">
-    <img src="pavan.jpg" alt="Pavan Rudra Photo">
-    <h1 class="fw-bold">Pavan Rudra</h1>
-    <p class="lead mb-1">Senior MLOps Engineer | DevOps | Cloud | Automation</p>
-    <p>
-      📧 <a href="mailto:rudra23pavan@gmail.com" class="text-white text-decoration-none">rudra23pavan@gmail.com</a> |
-      📞 +91 7818888981 |
-      🌐 <a href="https://github.com/p1rudra" class="text-white text-decoration-none" target="_blank">GitHub</a>
-    </p>
+<body class="bg-gray-50 dark:bg-brandbg text-gray-800 dark:text-gray-100 antialiased">
+  <!-- top sticky nav -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/60 dark:bg-slate-900/60 border-b border-gray-200 dark:border-slate-700">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="flex items-center gap-3">
+          <img src="pavan.jpg" alt="Pavan Rudra" class="w-10 h-10 rounded-full object-cover ring-2 ring-white dark:ring-slate-700" />
+          <span class="font-semibold">Pavan Rudra</span>
+        </a>
+
+        <div class="flex items-center gap-3">
+          <nav class="hidden md:flex gap-6 text-sm">
+            <a href="#summary" class="hover:underline focus-ring">Summary</a>
+            <a href="#skills" class="hover:underline focus-ring">Skills</a>
+            <a href="#experience" class="hover:underline focus-ring">Experience</a>
+            <a href="#projects" class="hover:underline focus-ring">Projects</a>
+            <a href="#contact" class="hover:underline focus-ring">Contact</a>
+          </nav>
+
+          <button id="resumeBtn" onclick="location.href='Pavan_Resume_AI.pdf'" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-primary text-white text-sm shadow-sm hover:bg-primary-dark focus-ring" title="Download Resume">
+            <!-- download icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" /></svg>
+            Resume
+          </button>
+
+          <!-- dark mode toggle -->
+          <button id="themeToggle" aria-label="Toggle dark mode" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800 focus-ring" title="Toggle color mode">
+            <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 3.5a.75.75 0 01.75-.75h0a.75.75 0 010 1.5H10.75A.75.75 0 0110 3.5zM10 16.5a.75.75 0 01.75-.75h0a.75.75 0 010 1.5H10.75A.75.75 0 0110 16.5zM16.5 10a.75.75 0 01.75-.75v0a.75.75 0 010 1.5h-.75A.75.75 0 0116.5 10zM4 10a.75.75 0 01.75-.75v0a.75.75 0 010 1.5H4.75A.75.75 0 014 10zM14.53 5.47a.75.75 0 011.06 0l.02.02a.75.75 0 11-1.06 1.06l-.02-.02a.75.75 0 010-1.06zM6.47 13.53a.75.75 0 011.06 0l.02.02a.75.75 0 11-1.06 1.06l-.02-.02a.75.75 0 010-1.06zM14.53 14.53a.75.75 0 010 1.06l-.02.02a.75.75 0 11-1.06-1.06l.02-.02a.75.75 0 011.06 0zM6.47 6.47a.75.75 0 010 1.06L6.45 7.55a.75.75 0 11-1.06-1.06L5.41 6.47a.75.75 0 011.06 0zM10 7.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z" /></svg>
+            <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.293 13.293A8 8 0 116.707 2.707a7 7 0 1010.586 10.586z" /></svg>
+          </button>
+
+          <!-- mobile menu button -->
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800 focus-ring" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 dark:border-slate-700">
+      <div class="px-4 pt-3 pb-4 flex flex-col gap-2">
+        <a href="#summary" class="py-2">Summary</a>
+        <a href="#skills" class="py-2">Skills</a>
+        <a href="#experience" class="py-2">Experience</a>
+        <a href="#projects" class="py-2">Projects</a>
+        <a href="#contact" class="py-2">Contact</a>
+        <a href="Pavan_Resume_AI.pdf" class="py-2 text-sm text-primary">Download Resume</a>
+      </div>
+    </div>
   </header>
 
-  <main class="container">
+  <!-- hero -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="hero" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center py-10">
+      <!-- intro card -->
+      <div class="md:col-span-2 bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-soft reveal" data-reveal>
+        <div class="flex items-start gap-5">
+          <img src="pavan.jpg" alt="Pavan Rudra portrait" class="w-28 h-28 rounded-xl object-cover ring-4 ring-white dark:ring-slate-700" />
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Pavan Rudra</h1>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Senior MLOps & DevOps Engineer — Azure • AWS • GCP • Kubernetes • Terraform</p>
 
-    <section id="summary">
-      <h2>Professional Summary</h2>
-      <p>
-        Results-driven <strong>Senior MLOps and DevOps Engineer</strong> with 7+ years of experience in cloud-native technologies, automation, and CI/CD pipelines.
-        Adept in <strong>Azure</strong>, <strong>AWS</strong>, and <strong>GCP</strong> environments, with expertise in <strong>Kubernetes</strong>, <strong>Terraform</strong>, and <strong>Python</strong>.
-        Proven success in implementing scalable, secure, and resilient cloud infrastructures following DevSecOps best practices.
-      </p>
-    </section>
+            <div class="mt-4 flex flex-wrap gap-2 items-center">
+              <a href="mailto:rudra23pavan@gmail.com" class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-gray-200 dark:border-slate-700 text-sm hover:bg-gray-50 dark:hover:bg-slate-700 focus-ring">
+                <!-- mail svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m-4 4l4 4" /></svg>
+                rudra23pavan@gmail.com
+              </a>
+              <a href="tel:+917818888981" class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-gray-200 dark:border-slate-700 text-sm hover:bg-gray-50 dark:hover:bg-slate-700 focus-ring">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 8.5A6.5 6.5 0 018.5 2h.25a1 1 0 01.98.79L10 4.5a1 1 0 01-.18.82l-1.1 1.6a11 11 0 005 5l1.6-1.1a1 1 0 01.82-.18l1.71.25a1 1 0 01.79.98V15.5A6.5 6.5 0 0115.5 22h-0" /></svg>
+                +91 78188 88981
+              </a>
+            </div>
 
-    <section id="skills">
-      <h2>Core Skills</h2>
-      <ul>
-        <li><strong>Cloud Platforms:</strong> Microsoft Azure, AWS, GCP</li>
-        <li><strong>Containerization & Orchestration:</strong> Docker, Kubernetes, AKS, EKS</li>
-        <li><strong>Infrastructure as Code:</strong> Terraform, Ansible</li>
-        <li><strong>CI/CD Pipelines:</strong> GitHub Actions, Azure DevOps, Jenkins, ArgoCD</li>
-        <li><strong>Monitoring & Observability:</strong> Prometheus, Grafana, Azure Monitor</li>
-        <li><strong>Programming & Scripting:</strong> Python, Bash, PowerShell</li>
-        <li><strong>Operating Systems:</strong> Linux (Ubuntu, CentOS), Windows Server</li>
-        <li><strong>Other Tools:</strong> Git, Helm, Docker Compose, ITIL, Automation</li>
-      </ul>
-    </section>
+            <div class="mt-4 flex items-center gap-3">
+              <a href="https://github.com/p1rudra" target="_blank" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 focus-ring" aria-label="GitHub">
+                <!-- GitHub -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.98 5.27.98 11.5c0 4.74 3.07 8.76 7.33 10.18.54.1.74-.24.74-.52 0-.26-.01-.95-.02-1.86-2.98.65-3.61-1.43-3.61-1.43-.48-1.24-1.17-1.57-1.17-1.57-.96-.66.07-.65.07-.65 1.06.08 1.62 1.09 1.62 1.09.94 1.61 2.47 1.15 3.07.88.1-.68.37-1.15.67-1.42-2.38-.27-4.88-1.19-4.88-5.3 0-1.17.42-2.12 1.1-2.87-.11-.27-.48-1.36.11-2.83 0 0 .9-.29 2.95 1.1A10.2 10.2 0 0112 6.82c.91.004 1.83.12 2.69.35 2.05-1.39 2.95-1.1 2.95-1.1.59 1.47.22 2.56.11 2.83.69.75 1.1 1.7 1.1 2.87 0 4.12-2.5 5.03-4.88 5.3.38.33.72.98.72 1.98 0 1.43-.01 2.58-.01 2.93 0 .28.2.63.75.52C20.95 20.26 24 16.24 24 11.5 24 5.27 19.27.5 12 .5z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/p1rudra" target="_blank" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 focus-ring" aria-label="LinkedIn">
+                <!-- LinkedIn -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.13 4.98 3.5zM.5 8.5h4v14h-4v-14zM8.5 8.5h3.8v2h.05c.53-.99 1.82-2 3.74-2 4 0 4.74 2.63 4.74 6.05V22.5h-4V15.2c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.87-2.77 3.8V22.5h-4V8.5z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
 
-    <section id="experience">
-      <h2>Professional Experience</h2>
-
-      <div class="card mb-3 p-3">
-        <div class="card-body">
-          <h3 class="fw-bold">EPAM Systems — Senior MLOps Engineer <span class="text-muted">(Apr 2024 – Present)</span></h3>
-          <p><strong>Project:</strong> AstraZeneca</p>
-          <ul>
-            <li>Designed and implemented CI/CD pipelines using GitHub Actions and Azure DevOps with security gates.</li>
-            <li>Managed and scaled Kubernetes clusters ensuring reliability and high availability.</li>
-            <li>Automated multi-cloud infrastructure provisioning using Terraform across AWS and Azure.</li>
-            <li>Mentored DevOps engineers, improving automation efficiency by 30%.</li>
-          </ul>
+        <!-- short summary bullets -->
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          <p class="text-sm text-gray-600 dark:text-gray-300">7+ years building cloud-native infrastructure, CI/CD and MLOps solutions. Strong in Azure, AWS, GCP, Terraform, and Kubernetes.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Focus: secure, automated, observable platforms for ML & data applications. Advocate for DevSecOps and reproducibility.</p>
         </div>
       </div>
 
-      <div class="card mb-3 p-3">
-        <div class="card-body">
-          <h3 class="fw-bold">Mphasis — Senior DevOps Engineer <span class="text-muted">(Jul 2023 – Apr 2024)</span></h3>
-          <p><strong>Project:</strong> Hewlett Packard</p>
-          <ul>
-            <li>Built and optimized AWS EKS clusters with RBAC and workload identity management.</li>
-            <li>Integrated SAST/DAST security scanning into CI/CD pipelines.</li>
-            <li>Automated deployments with Helm, improving delivery cycle time by 40%.</li>
-            <li>Managed microservices monitoring using Prometheus and Grafana for 99.99% uptime.</li>
+      <!-- quick stats / highlights -->
+      <aside class="space-y-4">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-soft reveal" data-reveal>
+          <h3 class="text-sm font-medium text-gray-500 dark:text-gray-300">Highlights</h3>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li class="flex items-center gap-3">
+              <span class="accent-dot bg-primary inline-block"></span>
+              Scaled Kubernetes for enterprise workloads (AKS / EKS)
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="accent-dot bg-indigo-500 inline-block"></span>
+              CI/CD & GitOps (GitHub Actions, Azure DevOps, ArgoCD)
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="accent-dot bg-yellow-400 inline-block"></span>
+              Terraform & IaC automation across multi-cloud
+            </li>
           </ul>
         </div>
-      </div>
 
-      <div class="card mb-3 p-3">
-        <div class="card-body">
-          <h3 class="fw-bold">Accenture Solutions Pvt Ltd — DevOps Engineer <span class="text-muted">(Aug 2021 – Jul 2023)</span></h3>
-          <ul>
-            <li>Optimized Azure cloud resources (App Services, Networking, Databases) for performance and cost.</li>
-            <li>Automated infrastructure patching and configuration with Ansible and Python scripts.</li>
-            <li>Implemented observability with Azure Monitor and Grafana, reducing MTTR by 30%.</li>
-          </ul>
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-soft reveal" data-reveal>
+          <h3 class="text-sm font-medium text-gray-500 dark:text-gray-300">Certifications</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="text-xs px-2 py-1 rounded-md bg-gray-100 dark:bg-slate-700">AWS DevOps Pro</span>
+            <span class="text-xs px-2 py-1 rounded-md bg-gray-100 dark:bg-slate-700">AZ-400</span>
+            <span class="text-xs px-2 py-1 rounded-md bg-gray-100 dark:bg-slate-700">AZ-104</span>
+            <span class="text-xs px-2 py-1 rounded-md bg-gray-100 dark:bg-slate-700">CEH v11</span>
+          </div>
         </div>
-      </div>
+      </aside>
+    </section>
 
-      <div class="card mb-3 p-3">
-        <div class="card-body">
-          <h3 class="fw-bold">Infogain Solutions Pvt Ltd — Cloud Engineer <span class="text-muted">(Apr 2019 – Jul 2021)</span></h3>
-          <ul>
-            <li>Maintained Azure and Linux production environments with 24/7 support coverage.</li>
-            <li>Implemented RBAC, IAM policies, and secure network architectures (VNETs, VPNs).</li>
-            <li>Performed RCA analysis for SEV1/2 incidents, enhancing system stability.</li>
-          </ul>
+    <!-- skills -->
+    <section id="skills" class="py-10 reveal" data-reveal>
+      <h2 class="text-xl font-semibold">Core Skills</h2>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-300 max-w-2xl">Technologies and best practices I work with daily to deliver resilient, automated cloud platforms.</p>
+
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-soft">
+          <h4 class="text-sm font-medium">Cloud</h4>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Azure, AWS, GCP</p>
         </div>
-      </div>
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-soft">
+          <h4 class="text-sm font-medium">Orchestration</h4>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Kubernetes, AKS, EKS, Helm</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-soft">
+          <h4 class="text-sm font-medium">IaC & Config</h4>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Terraform, Ansible, ARM</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-soft">
+          <h4 class="text-sm font-medium">CI/CD & GitOps</h4>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">GitHub Actions, Azure DevOps, Jenkins, ArgoCD</p>
+        </div>
 
-      <div class="card mb-3 p-3">
-        <div class="card-body">
-          <h3 class="fw-bold">Webbions Technologies — Software Engineer <span class="text-muted">(May 2017 – Mar 2019)</span></h3>
-          <ul>
-            <li>Developed Python and Bash automation scripts for server management.</li>
-            <li>Created Ansible playbooks to manage deployments and configurations at scale.</li>
-            <li>Improved system reliability and uptime through proactive incident resolution.</li>
-          </ul>
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-soft">
+          <h4 class="text-sm font-medium">Observability</h4>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Prometheus, Grafana, Azure Monitor</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-soft">
+          <h4 class="text-sm font-medium">Languages & Scripting</h4>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Python, Bash, PowerShell</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-soft">
+          <h4 class="text-sm font-medium">Security</h4>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">SAST/DAST integration, RBAC, IAM</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-soft">
+          <h4 class="text-sm font-medium">Other</h4>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Docker, Git, Helm, ITIL</p>
         </div>
       </div>
     </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <p><strong>B.E. in Electronics and Communication Engineering</strong><br>
-        Vishwakarma Government Engineering College, Ahmedabad (2013 – 2017)<br>
-        <strong>CGPA:</strong> 7.62
-      </p>
+    <!-- experience -->
+    <section id="experience" class="py-10">
+      <h2 class="text-xl font-semibold reveal" data-reveal>Experience</h2>
+
+      <div class="mt-6 space-y-6">
+        <!-- EPAM -->
+        <article class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-soft reveal" data-reveal>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-lg font-medium">EPAM Systems</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-300">Senior MLOps / AI Platform Engineer — Apr 2024 – Present</p>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">AstraZeneca (project)</div>
+          </div>
+
+          <ul class="mt-3 ml-4 list-disc text-sm text-gray-700 dark:text-gray-200">
+            <li>Designed and implemented CI/CD pipelines (GitHub Actions & Azure DevOps) with security gates and automated testing.</li>
+            <li>Managed and scaled Kubernetes clusters for AI workloads with rolling updates and autoscaling.</li>
+            <li>Automated multi-cloud provisioning with Terraform across Azure and AWS.</li>
+            <li>Integrated Prometheus & Grafana for observability of models and infrastructure.</li>
+          </ul>
+        </article>
+
+        <!-- Mphasis -->
+        <article class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-soft reveal" data-reveal>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-lg font-medium">Mphasis — Senior DevOps Engineer</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-300">Jul 2023 – Apr 2024</p>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Hewlett Packard (project)</div>
+          </div>
+          <ul class="mt-3 ml-4 list-disc text-sm text-gray-700 dark:text-gray-200">
+            <li>Built and optimized EKS clusters with RBAC and workload identity management.</li>
+            <li>Integrated SAST/DAST into CI/CD pipelines and automated deployments with Helm.</li>
+            <li>Improved delivery cycle time by ~40% through pipeline automation.</li>
+          </ul>
+        </article>
+
+        <!-- Accenture -->
+        <article class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-soft reveal" data-reveal>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-lg font-medium">Accenture Solutions Pvt Ltd — DevOps Engineer</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-300">Aug 2021 – Jul 2023</p>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Azure optimizations</div>
+          </div>
+          <ul class="mt-3 ml-4 list-disc text-sm text-gray-700 dark:text-gray-200">
+            <li>Optimized Azure resources (App Services, Networking, DB) for performance and cost.</li>
+            <li>Automated patching & config with Ansible and Python — reduced MTTR by 30%.</li>
+          </ul>
+        </article>
+
+        <!-- Infogain -->
+        <article class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-soft reveal" data-reveal>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-lg font-medium">Infogain Solutions Pvt Ltd — Cloud Engineer</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-300">Apr 2019 – Jul 2021</p>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Cloud operations</div>
+          </div>
+          <ul class="mt-3 ml-4 list-disc text-sm text-gray-700 dark:text-gray-200">
+            <li>Maintained Azure & Linux production systems with 24/7 support and SEV1/2 handling.</li>
+            <li>Implemented RBAC, IAM policies and secure VNET designs.</li>
+          </ul>
+        </article>
+
+        <!-- Webbions -->
+        <article class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-soft reveal" data-reveal>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-lg font-medium">Webbions Technologies — Software Engineer</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-300">May 2017 – Mar 2019</p>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Automation & scripting</div>
+          </div>
+          <ul class="mt-3 ml-4 list-disc text-sm text-gray-700 dark:text-gray-200">
+            <li>Built Python & Bash automation scripts and Ansible playbooks for deployments.</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li>AWS Certified DevOps Engineer – Professional</li>
-        <li>Microsoft Certified: AZ-400 DevOps Engineer Expert</li>
-        <li>Microsoft Certified: AZ-104 Azure Administrator</li>
-        <li>Microsoft Certified: AZ-900 Azure Fundamentals</li>
-        <li>Certified Ethical Hacker (CEH) v11</li>
-      </ul>
+    <!-- projects (placeholder) -->
+    <section id="projects" class="py-10 reveal" data-reveal>
+      <h2 class="text-xl font-semibold">Selected Projects</h2>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">A few examples of infrastructure & MLOps projects I built and maintained.</p>
+
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-soft">
+          <h4 class="font-medium">Enterprise GitOps Platform</h4>
+          <p class="mt-2 text-sm text-gray-700 dark:text-gray-200">Provisioned GitOps pipelines using ArgoCD and Terraform for multi-environment deployments.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-soft">
+          <h4 class="font-medium">Model Serving Platform</h4>
+          <p class="mt-2 text-sm text-gray-700 dark:text-gray-200">Containerized ML models, integrated monitoring & retraining pipelines, and secured APIs for inference.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="soft-skills">
-      <h2>Mindset & Soft Skills</h2>
-      <ul>
-        <li>Excellent analytical and troubleshooting abilities in distributed systems.</li>
-        <li>Autonomous problem-solver passionate about cloud performance and security.</li>
-        <li>Collaborative communicator and mentor across engineering teams.</li>
-      </ul>
+    <!-- contact -->
+    <section id="contact" class="py-10 reveal" data-reveal>
+      <h2 class="text-xl font-semibold">Contact</h2>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Available for senior MLOps / DevOps roles, contract work, or technical leadership positions.</p>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-soft">
+          <h4 class="font-medium">Get in touch</h4>
+          <p class="mt-2 text-sm text-gray-700 dark:text-gray-200">
+            Email: <a href="mailto:rudra23pavan@gmail.com" class="text-primary hover:underline">rudra23pavan@gmail.com</a><br>
+            Phone: <a href="tel:+917818888981" class="text-primary hover:underline">+91 78188 88981</a>
+          </p>
+
+          <div class="mt-4 flex gap-3">
+            <a href="https://github.com/p1rudra" target="_blank" class="px-3 py-2 bg-gray-100 dark:bg-slate-700 rounded-md focus-ring">GitHub</a>
+            <a href="https://www.linkedin.com/in/p1rudra" target="_blank" class="px-3 py-2 bg-gray-100 dark:bg-slate-700 rounded-md focus-ring">LinkedIn</a>
+            <a href="Pavan_Resume_AI.pdf" class="px-3 py-2 bg-primary text-white rounded-md focus-ring">Download Resume</a>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-soft">
+          <h4 class="font-medium">Availability</h4>
+          <p class="mt-2 text-sm text-gray-700 dark:text-gray-200">Open to opportunities — remote or hybrid. Interested in platform engineering, MLOps, and cloud automation roles.</p>
+
+          <h5 class="mt-4 text-sm font-medium">Education</h5>
+          <p class="mt-1 text-sm text-gray-700 dark:text-gray-200">B.E. Electronics & Communication — Vishwakarma Government Engineering College (2013–2017). CGPA: 7.62</p>
+        </div>
+      </div>
     </section>
+
+    <footer class="py-10 text-sm text-gray-500 dark:text-gray-400">
+      <div class="flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+        <div>© 2025 Pavan Rudra. Built with Tailwind CSS.</div>
+        <div>Made accessible & responsive — <a href="https://p1rudra.github.io/" class="text-primary hover:underline">Portfolio</a></div>
+      </div>
+    </footer>
   </main>
 
-  <footer>
-    © 2025 Pavan Rudra — Built with ❤️ using Bootstrap 5 | <a href="https://github.com/p1rudra" target="_blank">GitHub</a>
-  </footer>
+  <!-- small utility scripts -->
+  <script>
+    // Dark mode handling (persisted)
+    (function() {
+      const html = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      const iconSun = document.getElementById('iconSun');
+      const iconMoon = document.getElementById('iconMoon');
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      function setMode(mode) {
+        if (mode === 'dark') {
+          html.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+          iconSun.classList.remove('hidden');
+          iconMoon.classList.add('hidden');
+        } else {
+          html.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          iconSun.classList.add('hidden');
+          iconMoon.classList.remove('hidden');
+        }
+      }
+
+      // initialize
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        setMode('dark');
+      } else {
+        setMode('light');
+      }
+
+      toggle.addEventListener('click', () => {
+        setMode(document.documentElement.classList.contains('dark') ? 'light' : 'dark');
+      });
+    })();
+
+    // mobile menu toggle
+    (function() {
+      const btn = document.getElementById('mobileMenuBtn');
+      const menu = document.getElementById('mobileMenu');
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    })();
+
+    // scroll reveal using IntersectionObserver
+    (function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('revealed');
+            observer.unobserve(e.target);
+          }
+        });
+      }, {threshold: 0.12});
+
+      document.querySelectorAll('[data-reveal]').forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+      });
+    })();
+
+    // subtle hover bounce for accent dots
+    document.querySelectorAll('.accent-dot').forEach(dot => {
+      dot.addEventListener('mouseenter', () => dot.style.transform = 'scale(1.18)');
+      dot.addEventListener('mouseleave', () => dot.style.transform = 'scale(1)');
+    });
+  </script>
 </body>
 </html>
